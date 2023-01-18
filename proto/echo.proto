@@ -1,0 +1,16 @@
+syntax = "proto3";
+package echo;
+option go_package = "./proto";
+
+service UserServer{
+  rpc CreateNewUser (NewUser) returns (User) {}
+}
+message NewUser {
+  string name = 1;
+  int32 age = 2;
+}
+message User {
+  string name = 1;
+  int32 age = 2;
+  int32 id = 3; 
+}
